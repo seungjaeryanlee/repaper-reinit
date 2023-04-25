@@ -1,8 +1,8 @@
-from models.resnet import resnet32
+from models import init_model
 
 
 def main():
-    model = resnet32()
+    model = init_model("ResNet20")
     print(model)
 
 
