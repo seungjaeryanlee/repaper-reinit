@@ -8,3 +8,10 @@ transforms:
   valid:
     name: Identity
     reprs: []
+
+# Dataset
+datasets:
+  train:
+    name: CIFAR10
+  valid:
+    name: CIFAR10

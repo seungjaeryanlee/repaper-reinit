@@ -8,8 +8,8 @@ def main(CONFIG):
     model = init_model("ResNet20")
     train_transform = init_transform(CONFIG.transforms.train)
     valid_transform = init_transform(CONFIG.transforms.valid)
-    train_dataset = init_dataset(train_transform, train=True)
-    valid_dataset = init_dataset(valid_transform, train=False)
+    train_dataset = init_dataset(CONFIG.datasets.train, train_transform, train=True)
+    valid_dataset = init_dataset(CONFIG.datasets.valid, valid_transform, train=False)
 
     print(model)
     print(train_transform)
