@@ -1,10 +1,19 @@
-from .resnet import init_ResNet20
+"""Initialize models."""
+import logging
+
+from .resnet import ResNet
 
 
-def init_model(model_name):
-    model = None
+def init_model(config):
+    """Initialize model based on model name.
 
-    if model_name == "ResNet20":
-        model = init_ResNet20()
+    Args:
+        config: Configuration for the model.
+    Returns:
+        Model specified by arguments.
+    """
+    if config.name == "ResNet_20":
+        return ResNet(num_blocks=[3, 3, 3], num_classes=config.num_classes)
 
-    return model
+    logging.error(f"Could not create model {config.name}.")
+    raise ValueError(f"Could not create model {config.name}.")

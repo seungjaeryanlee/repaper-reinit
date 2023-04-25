@@ -5,7 +5,7 @@ from transforms import init_transform
 
 
 def main(CONFIG):
-    model = init_model("ResNet20")
+    model = init_model(CONFIG.model)
     train_transform = init_transform(CONFIG.transforms.train)
     valid_transform = init_transform(CONFIG.transforms.valid)
     train_dataset = init_dataset(CONFIG.datasets.train, train_transform, train=True)

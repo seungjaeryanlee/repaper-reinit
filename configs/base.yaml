@@ -15,3 +15,8 @@ datasets:
     name: CIFAR10
   valid:
     name: CIFAR10
+
+# Model
+model:
+  name: ResNet_20
+  num_classes: 10
