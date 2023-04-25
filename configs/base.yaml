@@ -1,0 +1,10 @@
+### Default experiment hyperparameters 
+
+# Transform
+transforms:
+  train:
+    name: FlipCrop
+    reprs: []
+  valid:
+    name: Identity
+    reprs: []
