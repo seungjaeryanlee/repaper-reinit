@@ -1,19 +1,12 @@
+from datasets import init_dataset
 from models import init_model
-from torchvision.datasets import CIFAR10
-from torchvision import transforms
+from transforms import init_transform
 
 
 def main():
     model = init_model("ResNet20")
-    train_transform = transforms.Compose(
-        [
-            transforms.RandomHorizontalFlip(),
-            transforms.RandomCrop(32, padding=4),
-        ]
-    )
-    train_dataset = CIFAR10(
-        root="./data/", train=True, transform=train_transform, download=True
-    )
+    train_transform = init_transform()
+    train_dataset = init_dataset()
 
     print(model)
 
